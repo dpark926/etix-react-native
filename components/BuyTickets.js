@@ -7,6 +7,7 @@ import {
   Image,
   TouchableHighlight
 } from 'react-native';
+import cssVariables from '../styles/cssVariables';
 
 class BuyTickets extends Component<> {
   render() {
@@ -58,12 +59,12 @@ class BuyTickets extends Component<> {
 const styles = StyleSheet.create({
   buyTickets: {
     flex: 1,
-    backgroundColor: '#223365',
+    backgroundColor: cssVariables.darkerBlue,
     // borderColor: 'red',
     // borderWidth: 2
   },
   buyTicketContainer: {
-    backgroundColor: '#223365',
+    backgroundColor: cssVariables.darkerBlue,
     alignSelf: 'stretch',
     // borderColor: 'orange',
     // borderWidth: 2
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   blueButton: {
-    backgroundColor: '#445588',
+    backgroundColor: cssVariables.darkBlue,
     marginTop: -2
   },
   blueButtonText: {

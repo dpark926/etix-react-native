@@ -5,6 +5,7 @@ import BuyTickets from '../components/BuyTickets';
 import Origin from '../components/Origin';
 import HomeHeader from '../components/HomeHeader';
 import Header from '../components/Header';
+import cssVariables from '../styles/cssVariables';
 
 export const RootStack = StackNavigator(
   {
@@ -27,7 +28,7 @@ export const RootStack = StackNavigator(
     initialRouteName: 'Home',
     navigationOptions: {
       headerStyle: {
-        backgroundColor: '#223365'
+        backgroundColor: cssVariables.darkerBlue
       },
       headerTintColor: 'white',
       headerTitleStyle: {
