@@ -6,26 +6,19 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View
 } from 'react-native';
-import Header from './components/Header';
-import BuyTickets from './components/BuyTickets';
+
+import { RootStack } from './config/router';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        {/* <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text> */}
-        <BuyTickets/>
+        <RootStack/>
       </View>
     );
   }
@@ -34,11 +27,9 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
     backgroundColor: '#223365',
-    borderColor: 'red',
-    borderWidth: 2
+    // borderColor: 'red',
+    // borderWidth: 2
   },
   welcome: {
     fontSize: 20,

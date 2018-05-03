@@ -6,7 +6,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-const ImageHeader = () => (
+const HomeHeader = () => (
   <View style={styles.headerContainer}>
     <Image source={require('../styles/imgs/mta_logo.png')} />
   </View>
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ImageHeader;
+export default HomeHeader;
