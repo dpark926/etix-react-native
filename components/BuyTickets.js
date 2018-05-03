@@ -4,7 +4,8 @@ import {
   Text,
   View,
   Button,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
 
 class BuyTickets extends Component<> {
@@ -13,21 +14,24 @@ class BuyTickets extends Component<> {
       <View style={styles.buyTickets}>
         <View style={styles.buyTicketContainer}>
           <View>
-            <View style={styles.button} onPress={() => this.props.navigation.navigate('Origin')}>
-              <Button title='Origin' onPress={() => this.props.navigation.navigate('Origin')} />
-              <Image style={styles.buttonImg} source={require('../styles/imgs/buy-ticket.png')} />
-              <Text style={styles.buttonText}>
-                Buy Tickets
-              </Text>
-              <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
-            </View>
-            <View style={styles.button}>
-              <Image style={styles.buttonImg} source={require('../styles/imgs/wallet.png')} />
-              <Text style={styles.buttonText}>
-                Ticket Wallet
-              </Text>
-              <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
-            </View>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('Origin')}>
+              <View style={styles.button}>
+                <Image style={styles.buttonImg} source={require('../styles/imgs/buy-ticket.png')} />
+                <Text style={styles.buttonText}>
+                  Buy Tickets
+                </Text>
+                <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
+              </View>
+            </TouchableHighlight>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('Origin')}>
+              <View style={styles.button}>
+                <Image style={styles.buttonImg} source={require('../styles/imgs/wallet.png')} />
+                <Text style={styles.buttonText}>
+                  Ticket Wallet
+                </Text>
+                <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
+              </View>
+            </TouchableHighlight>
             <View style={[styles.button, styles.blueButton]}>
               <Image style={styles.buttonImg} source={require('../styles/imgs/top_ticket.png')} />
               <Text style={styles.blueButtonText}>
@@ -35,13 +39,15 @@ class BuyTickets extends Component<> {
               </Text>
               <View style={styles.emptyRight}></View>
             </View>
-            <View style={styles.button}>
-              <Image style={styles.buttonImg} source={require('../styles/imgs/train_time.png')} />
-              <Text style={styles.buttonText}>
-                Train Time
-              </Text>
-              <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
-            </View>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('Origin')}>
+              <View style={styles.button}>
+                <Image style={styles.buttonImg} source={require('../styles/imgs/train_time.png')} />
+                <Text style={styles.buttonText}>
+                  Train Time
+                </Text>
+                <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
+              </View>
+            </TouchableHighlight>
           </View>
         </View>
       </View>
@@ -51,7 +57,10 @@ class BuyTickets extends Component<> {
 
 const styles = StyleSheet.create({
   buyTickets: {
-
+    flex: 1,
+    backgroundColor: '#223365',
+    // borderColor: 'red',
+    // borderWidth: 2
   },
   buyTicketContainer: {
     backgroundColor: '#223365',
