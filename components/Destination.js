@@ -8,13 +8,13 @@ import {
 } from 'react-native';
 import LOCATIONS from '../config/LOCATIONS';
 
-export default class Origin extends Component<> {
+export default class Destination extends Component<> {
   render() {
     let locationList = LOCATIONS.map( location => {
       return location.stations.map( station => {
         if (station === 'Grand Central Terminal' || station =='Penn Station') {
           return (
-            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Destination')}>
+            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Origin')}>
               <View style={[styles.stationItem, styles.nycStation]}>
                 <Text style={styles.stationText}>{station.toUpperCase()}</Text>
               </View>
@@ -34,7 +34,7 @@ export default class Origin extends Component<> {
           )
         } else {
           return (
-            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Destination')}>
+            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Origin')}>
               <View style={[styles.stationItem, styles.otherStation]}>
                 <Text style={styles.stationText}>{station}</Text>
               </View>
