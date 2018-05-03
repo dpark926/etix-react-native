@@ -1,76 +1,61 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
   View,
+  Button,
   Image
 } from 'react-native';
 
-function BuyTickets() {
-  return (
-    <View style={styles.buyTickets}>
-      <View style={styles.headerContainer}>
-        <Image source={require('../styles/imgs/mta_logo.png')} />
-        {/* <Text style={styles.headerText}>Hamburger</Text> */}
-      </View>
-      <View style={styles.buyTicketContainer}>
-        <View>
-          <View style={styles.button}>
-            <Image style={styles.buttonImg} source={require('../styles/imgs/buy-ticket.png')} />
-            <Text style={styles.buttonText}>
-              Buy Tickets
-            </Text>
-            <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
-          </View>
-          <View style={styles.button}>
-            <Image style={styles.buttonImg} source={require('../styles/imgs/wallet.png')} />
-            <Text style={styles.buttonText}>
-              Ticket Wallet
-            </Text>
-            <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
-          </View>
-          <View style={[styles.button, styles.blueButton]}>
-            <Image style={styles.buttonImg} source={require('../styles/imgs/top_ticket.png')} />
-            <Text style={styles.blueButtonText}>
-              Your top tickets will appear here for quick access
-            </Text>
-            <View style={styles.emptyRight}></View>
-          </View>
-          <View style={styles.button}>
-            <Image style={styles.buttonImg} source={require('../styles/imgs/train_time.png')} />
-            <Text style={styles.buttonText}>
-              Train Time
-            </Text>
-            <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
+class BuyTickets extends Component<> {
+  render() {
+    return (
+      <View style={styles.buyTickets}>
+        <View style={styles.buyTicketContainer}>
+          <View>
+            <View style={styles.button} onPress={() => this.props.navigation.navigate('Origin')}>
+              <Button title='Origin' onPress={() => this.props.navigation.navigate('Origin')} />
+              <Image style={styles.buttonImg} source={require('../styles/imgs/buy-ticket.png')} />
+              <Text style={styles.buttonText}>
+                Buy Tickets
+              </Text>
+              <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
+            </View>
+            <View style={styles.button}>
+              <Image style={styles.buttonImg} source={require('../styles/imgs/wallet.png')} />
+              <Text style={styles.buttonText}>
+                Ticket Wallet
+              </Text>
+              <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
+            </View>
+            <View style={[styles.button, styles.blueButton]}>
+              <Image style={styles.buttonImg} source={require('../styles/imgs/top_ticket.png')} />
+              <Text style={styles.blueButtonText}>
+                Your top tickets will appear here for quick access
+              </Text>
+              <View style={styles.emptyRight}></View>
+            </View>
+            <View style={styles.button}>
+              <Image style={styles.buttonImg} source={require('../styles/imgs/train_time.png')} />
+              <Text style={styles.buttonText}>
+                Train Time
+              </Text>
+              <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
+            </View>
           </View>
         </View>
       </View>
-    </View>
-  )
+    )
+  }
 }
 
 const styles = StyleSheet.create({
   buyTickets: {
 
   },
-  headerContainer: {
-    flexDirection: 'row',
-    // backgroundColor: '#223365',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
-    borderBottomColor: 'black',
-    borderBottomWidth: 2
-    // borderColor: 'yellow',
-    // borderWidth: 2
-  },
-  headerText: {
-    color: 'white',
-  },
   buyTicketContainer: {
     backgroundColor: '#223365',
     alignSelf: 'stretch',
-    marginTop: 10,
     // borderColor: 'orange',
     // borderWidth: 2
   },
