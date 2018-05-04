@@ -6,9 +6,12 @@ import {
   TouchableHighlight,
   ScrollView
 } from 'react-native';
+import { connect } from 'react-redux';
+import handleClick from '../actions/clickActions';
+import handleType from '../actions/typeActions';
 import LOCATIONS from '../config/LOCATIONS';
 
-export default class Destination extends Component<> {
+class Destination extends Component<> {
   render() {
     let locationList = LOCATIONS.map( location => {
       return location.stations.map( station => {
@@ -46,6 +49,7 @@ export default class Destination extends Component<> {
 
     return (
       <ScrollView style={styles.origin}>
+        <Text>{this.props.clickReducer.clickedOrigin}</Text>
         {locationList}
       </ScrollView>
     )
@@ -89,3 +93,14 @@ const styles = StyleSheet.create({
     fontSize: 16
   }
 });
+
+const mapStateToProps = state => {
+  return state;
+};
+
+const mapActionsToProps = {
+  handleClickedDestination: handleClick.handleClickedDestination,
+  handleDestination: handleType.handleTypedDestination
+}
+
+export default connect( mapStateToProps, mapActionsToProps )( Destination );

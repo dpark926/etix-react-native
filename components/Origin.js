@@ -6,15 +6,27 @@ import {
   TouchableHighlight,
   ScrollView
 } from 'react-native';
+import { connect } from 'react-redux';
+import handleClick from '../actions/clickActions';
+import handleType from '../actions/typeActions';
 import LOCATIONS from '../config/LOCATIONS';
 
-export default class Origin extends Component<> {
+class Origin extends Component<> {
+  handleClickedOrigin = (event) => {
+    this.props.handleClickedOrigin(event);
+    this.props.navigation.navigate('Destination')
+  }
+
+  handleOrigin = (event) => {
+    this.props.handleOrigin( event.target.value );
+  }
+
   render() {
     let locationList = LOCATIONS.map( location => {
       return location.stations.map( station => {
         if (station === 'Grand Central Terminal' || station =='Penn Station') {
           return (
-            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Destination')}>
+            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.handleClickedOrigin(station)}>
               <View style={[styles.stationItem, styles.nycStation]}>
                 <Text style={styles.stationText}>{station.toUpperCase()}</Text>
               </View>
@@ -34,7 +46,7 @@ export default class Origin extends Component<> {
           )
         } else {
           return (
-            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Destination')}>
+            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.handleClickedOrigin(station)}>
               <View style={[styles.stationItem, styles.otherStation]}>
                 <Text style={styles.stationText}>{station}</Text>
               </View>
@@ -89,3 +101,14 @@ const styles = StyleSheet.create({
     fontSize: 16
   }
 });
+
+const mapStateToProps = state => {
+  return state;
+};
+
+const mapActionsToProps = {
+  handleClickedOrigin: handleClick.handleClickedOrigin,
+  handleOrigin: handleType.handleTypedOrigin
+}
+
+export default connect( mapStateToProps, mapActionsToProps )( Origin );
