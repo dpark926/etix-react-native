@@ -18,39 +18,56 @@ import SearchBar from './SearchBar';
 import LOCATIONS from '../config/LOCATIONS';
 
 class Destination extends Component<> {
+  handleDestination = (text) => {
+    this.props.handleDestination(text);
+  }
+
   render() {
-    let locationList = LOCATIONS.map( location => {
-      return location.stations.map( station => {
-        if (station === 'Grand Central Terminal' || station =='Penn Station') {
-          return (
-            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Origin')}>
-              <View style={[styles.stationItem, styles.nycStation]}>
-                <Text style={styles.stationText}>{station.toUpperCase()}</Text>
-              </View>
-            </TouchableHighlight>
-          )
-        } else if (station === '000') {
-          return (
-            <View key={station} style={[styles.stationItem, styles.blueDivider]}>
-              <Text></Text>
+    let typedOrigin = this.props.typeReducer.destination
+    let newArray = [];
+
+    for (let i = 0; i < LOCATIONS.length; i++) {
+      let stations = LOCATIONS[i].stations;
+
+      for (let j = 0; j < stations.length; j++) {
+        let location = stations[j]
+
+        if (location.slice(0, typedOrigin.length).toLowerCase() === typedOrigin.toLowerCase() && !newArray.includes(location)) {
+          newArray.push(location)
+        }
+      }
+    }
+
+    let locationList = newArray.map( station => {
+      if (station === 'Grand Central Terminal' || station =='Penn Station') {
+        return (
+          <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Origin')}>
+            <View style={[styles.stationItem, styles.nycStation]}>
+              <Text style={styles.stationText}>{station.toUpperCase()}</Text>
             </View>
-          )
-        } else if (station.length === 1) {
-          return (
-            <View key={station} style={[styles.stationItem, styles.locationTitle]}>
+          </TouchableHighlight>
+        )
+      } else if (station === '000') {
+        return (
+          <View key={station} style={[styles.stationItem, styles.blueDivider]}>
+            <Text></Text>
+          </View>
+        )
+      } else if (station.length === 1) {
+        return (
+          <View key={station} style={[styles.stationItem, styles.locationTitle]}>
+            <Text style={styles.stationText}>{station}</Text>
+          </View>
+        )
+      } else {
+        return (
+          <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Origin')}>
+            <View style={[styles.stationItem, styles.otherStation]}>
               <Text style={styles.stationText}>{station}</Text>
             </View>
-          )
-        } else {
-          return (
-            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Origin')}>
-              <View style={[styles.stationItem, styles.otherStation]}>
-                <Text style={styles.stationText}>{station}</Text>
-              </View>
-            </TouchableHighlight>
-          )
-        }
-      })
+          </TouchableHighlight>
+        )
+      }
     })
 
     const yellowWidth = 0.2;
@@ -58,6 +75,7 @@ class Destination extends Component<> {
     return (
       <ScrollView style={styles.origin}>
         <BlackBar yellowWidth={yellowWidth}/>
+        <SearchBar handleLocation={this.handleDestination}/>
         <Text>{this.props.clickReducer.clickedOrigin}</Text>
         {locationList}
       </ScrollView>

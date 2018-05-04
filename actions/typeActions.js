@@ -8,7 +8,6 @@ function handleTypedOrigin(data) {
 }
 
 function handleTypedDestination(data) {
-  console.log('hey')
   return {
     type: 'typedDestination',
     payload: {

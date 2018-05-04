@@ -80,9 +80,7 @@ class Origin extends Component<> {
     return (
       <ScrollView style={styles.origin}>
         <BlackBar yellowWidth={yellowWidth}/>
-        <SearchBar
-          handleLocation={this.handleOrigin}
-        />
+        <SearchBar handleLocation={this.handleOrigin}/>
         {locationList}
       </ScrollView>
     )
