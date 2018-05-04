@@ -4,6 +4,8 @@ import {
   Text,
   View
 } from 'react-native';
+import { Provider } from 'react-redux';
+import store from './store';
 
 import { RootStack } from './config/router';
 
@@ -11,9 +13,11 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <RootStack/>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <RootStack/>
+        </View>
+      </Provider>
     );
   }
 }
