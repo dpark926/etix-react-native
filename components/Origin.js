@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import handleClick from '../actions/clickActions';
 import handleType from '../actions/typeActions';
+import BlackBar from './BlackBar';
 import LOCATIONS from '../config/LOCATIONS';
 
 class Origin extends Component<> {
@@ -56,8 +57,11 @@ class Origin extends Component<> {
       })
     })
 
+    const yellowWidth = 0.1;
+
     return (
       <ScrollView style={styles.origin}>
+        <BlackBar yellowWidth={yellowWidth}/>
         {locationList}
       </ScrollView>
     )

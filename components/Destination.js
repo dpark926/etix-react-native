@@ -7,6 +7,7 @@ import {
   ScrollView
 } from 'react-native';
 import { connect } from 'react-redux';
+import BlackBar from './BlackBar';
 import handleClick from '../actions/clickActions';
 import handleType from '../actions/typeActions';
 import LOCATIONS from '../config/LOCATIONS';
@@ -47,8 +48,11 @@ class Destination extends Component<> {
       })
     })
 
+    const yellowWidth = 0.2;
+
     return (
       <ScrollView style={styles.origin}>
+        <BlackBar yellowWidth={yellowWidth}/>
         <Text>{this.props.clickReducer.clickedOrigin}</Text>
         {locationList}
       </ScrollView>
