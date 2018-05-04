@@ -2,7 +2,7 @@ function handleTypedOrigin(data) {
   return {
     type: 'typedOrigin',
     payload: {
-      destinationSearch: data
+      typedOrigin: data
     }
   }
 }
@@ -12,7 +12,7 @@ function handleTypedDestination(data) {
   return {
     type: 'typedDestination',
     payload: {
-      destinationClicked: data
+      typedDestination: data
     }
   }
 }

@@ -9,12 +9,12 @@ const typeReducer = ( state = initialState, { type, payload } ) => {
     case 'typedOrigin':
       return {
         ...state,
-        origin: payload.destinationSearch
+        origin: payload.typedOrigin
       };
     case 'typedDestination':
       return {
         ...state,
-        destination: payload.destinationClicked
+        destination: payload.typedDestination
       }
     case 'secCode':
       return {

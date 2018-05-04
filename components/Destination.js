@@ -7,9 +7,14 @@ import {
   ScrollView
 } from 'react-native';
 import { connect } from 'react-redux';
-import BlackBar from './BlackBar';
+// Actions
 import handleClick from '../actions/clickActions';
+// Reducers
 import handleType from '../actions/typeActions';
+// Components
+import BlackBar from './BlackBar';
+import SearchBar from './SearchBar';
+// Data
 import LOCATIONS from '../config/LOCATIONS';
 
 class Destination extends Component<> {

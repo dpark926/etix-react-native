@@ -7,9 +7,14 @@ import {
   ScrollView
 } from 'react-native';
 import { connect } from 'react-redux';
+// Actions
 import handleClick from '../actions/clickActions';
+// Reducer
 import handleType from '../actions/typeActions';
+// Components
 import BlackBar from './BlackBar';
+import SearchBar from './SearchBar';
+// Data
 import LOCATIONS from '../config/LOCATIONS';
 
 class Origin extends Component<> {
@@ -18,43 +23,56 @@ class Origin extends Component<> {
     this.props.navigation.navigate('Destination')
   }
 
-  handleOrigin = (event) => {
-    this.props.handleOrigin( event.target.value );
+  handleOrigin = (text) => {
+    this.props.handleOrigin(text);
   }
 
   render() {
-    let locationList = LOCATIONS.map( location => {
-      return location.stations.map( station => {
-        if (station === 'Grand Central Terminal' || station =='Penn Station') {
-          return (
-            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.handleClickedOrigin(station)}>
-              <View style={[styles.stationItem, styles.nycStation]}>
-                <Text style={styles.stationText}>{station.toUpperCase()}</Text>
-              </View>
-            </TouchableHighlight>
-          )
-        } else if (station === '000') {
-          return (
-            <View key={station} style={[styles.stationItem, styles.blueDivider]}>
-              <Text></Text>
+    let typedOrigin = this.props.typeReducer.origin
+    let newArray = [];
+
+    for (let i = 0; i < LOCATIONS.length; i++) {
+      let stations = LOCATIONS[i].stations;
+
+      for (let j = 0; j < stations.length; j++) {
+        let location = stations[j]
+
+        if (location.slice(0, typedOrigin.length).toLowerCase() === typedOrigin.toLowerCase() && !newArray.includes(location)) {
+          newArray.push(location)
+        }
+      }
+    }
+
+    let locationList = newArray.map( station => {
+      if (station === 'Grand Central Terminal' || station =='Penn Station') {
+        return (
+          <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.handleClickedOrigin(station)}>
+            <View style={[styles.stationItem, styles.nycStation]}>
+              <Text style={styles.stationText}>{station.toUpperCase()}</Text>
             </View>
-          )
-        } else if (station.length === 1) {
-          return (
-            <View key={station} style={[styles.stationItem, styles.locationTitle]}>
+          </TouchableHighlight>
+        )
+      } else if (station === '000') {
+        return (
+          <View key={station} style={[styles.stationItem, styles.blueDivider]}>
+            <Text></Text>
+          </View>
+        )
+      } else if (station.length === 1) {
+        return (
+          <View key={station} style={[styles.stationItem, styles.locationTitle]}>
+            <Text style={styles.stationText}>{station}</Text>
+          </View>
+        )
+      } else {
+        return (
+          <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.handleClickedOrigin(station)}>
+            <View style={[styles.stationItem, styles.otherStation]}>
               <Text style={styles.stationText}>{station}</Text>
             </View>
-          )
-        } else {
-          return (
-            <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.handleClickedOrigin(station)}>
-              <View style={[styles.stationItem, styles.otherStation]}>
-                <Text style={styles.stationText}>{station}</Text>
-              </View>
-            </TouchableHighlight>
-          )
-        }
-      })
+          </TouchableHighlight>
+        )
+      }
     })
 
     const yellowWidth = 0.1;
@@ -62,6 +80,9 @@ class Origin extends Component<> {
     return (
       <ScrollView style={styles.origin}>
         <BlackBar yellowWidth={yellowWidth}/>
+        <SearchBar
+          handleLocation={this.handleOrigin}
+        />
         {locationList}
       </ScrollView>
     )
