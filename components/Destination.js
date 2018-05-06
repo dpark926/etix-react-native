@@ -21,7 +21,8 @@ import LOCATIONS from '../config/LOCATIONS';
 
 class Destination extends Component<> {
   handleDestination = (text) => {
-    this.props.handleDestination(text);
+    this.props.handleClickedDestination(text);
+    this.props.navigation.navigate('TicketType');
   }
 
   render() {
@@ -57,7 +58,7 @@ class Destination extends Component<> {
     let locationList = newArray.map( station => {
       if (station === 'Grand Central Terminal' || station =='Penn Station') {
         return (
-          <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Origin')}>
+          <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.handleDestination(station)}>
             <View style={[styles.stationItem, styles.nycStation]}>
               <Text style={styles.stationText}>{station.toUpperCase()}</Text>
             </View>
@@ -77,7 +78,7 @@ class Destination extends Component<> {
         )
       } else {
         return (
-          <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.props.navigation.navigate('Origin')}>
+          <TouchableHighlight key={station.split(' ').join('-')} onPress={() => this.handleDestination(station)}>
             <View style={[styles.stationItem, styles.otherStation]}>
               <Text style={styles.stationText}>{station}</Text>
             </View>
