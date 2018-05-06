@@ -14,6 +14,8 @@ import handleType from '../actions/typeActions';
 // Components
 import BlackBar from './BlackBar';
 import SearchBar from './SearchBar';
+// cssVariables
+import cssVariables from '../styles/cssVariables';
 // Data
 import LOCATIONS from '../config/LOCATIONS';
 
@@ -32,7 +34,21 @@ class Destination extends Component<> {
       for (let j = 0; j < stations.length; j++) {
         let location = stations[j]
 
-        if (location.slice(0, typedOrigin.length).toLowerCase() === typedOrigin.toLowerCase() && !newArray.includes(location)) {
+        if (this.props.clickReducer.clickedOrigin === 'Grand Central Terminal' && location === 'Grand Central Terminal') {
+          continue;
+        } else if (this.props.clickReducer.clickedOrigin === 'Grand Central Terminal' && location === 'Penn Station') {
+          continue;
+        } else if (this.props.clickReducer.clickedOrigin === 'Penn Station' && location === 'Penn Station') {
+          continue;
+        } else if (this.props.clickReducer.clickedOrigin === 'Penn Station' && location === 'Grand Central Terminal') {
+          continue;
+        } else if (this.props.clickReducer.clickedOrigin === 'Grand Central Terminal' && location === '000') {
+          continue;
+        } else if (this.props.clickReducer.clickedOrigin === 'Penn Station' && location === '000') {
+          continue;
+        } else if (this.props.clickReducer.clickedOrigin === location) {
+          continue;
+        } else if (location.slice(0, typedOrigin.length).toLowerCase() === typedOrigin.toLowerCase() && !newArray.includes(location)) {
           newArray.push(location)
         }
       }
@@ -75,8 +91,10 @@ class Destination extends Component<> {
     return (
       <ScrollView style={styles.origin}>
         <BlackBar yellowWidth={yellowWidth}/>
+        <View style={styles.originTo}>
+          <Text style={styles.clicked}>{this.props.clickReducer.clickedOrigin}</Text>
+        </View>
         <SearchBar handleLocation={this.handleDestination}/>
-        <Text>{this.props.clickReducer.clickedOrigin}</Text>
         {locationList}
       </ScrollView>
     )
@@ -89,7 +107,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
     paddingTop: 12,
     paddingBottom: 12,
-    borderBottomColor: '#d6d6d6',
+    borderBottomColor: cssVariables.lightGray,
     borderBottomWidth: 1,
     // borderColor: 'red',
     // borderWidth: 2
@@ -98,13 +116,13 @@ const styles = StyleSheet.create({
 
   },
   blueDivider: {
-    backgroundColor: '#223365',
+    backgroundColor: cssVariables.darkerBlue,
     marginLeft: 0,
     marginRight: 0,
     borderBottomWidth: 0
   },
   locationTitle: {
-    backgroundColor: '#d6d6d6',
+    backgroundColor: cssVariables.lightGray,
     marginLeft: 0,
     marginRight: 0,
     paddingTop: 5,
@@ -118,6 +136,19 @@ const styles = StyleSheet.create({
   },
   stationText: {
     fontSize: 16
+  },
+  originTo: {
+    backgroundColor: cssVariables.darkerBlue,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
+  },
+  clicked: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: 'white'
   }
 });
 
