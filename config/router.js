@@ -1,11 +1,18 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-
+// Components
 import BuyTickets from '../components/BuyTickets';
 import HomeHeader from '../components/HomeHeader';
 // import Header from '../components/Header';
 import Origin from '../components/Origin';
 import Destination from '../components/Destination';
+import TicketType from '../components/TicketType';
+import TenTrip from '../components/ticketTypes/TenTrip';
+import Monthly from '../components/ticketTypes/Monthly';
+import OneWay from '../components/ticketTypes/OneWay';
+import RoundTrip from '../components/ticketTypes/RoundTrip';
+import Weekly from '../components/ticketTypes/Weekly';
+// cssVariables
 import cssVariables from '../styles/cssVariables';
 
 export const RootStack = StackNavigator(
@@ -28,7 +35,42 @@ export const RootStack = StackNavigator(
       screen: Destination,
       navigationOptions: {
         title: 'Select Destination Station',
-        // header: <Header/>
+      },
+    },
+    TicketType: {
+      screen: TicketType,
+      navigationOptions: {
+        title: 'Select Ticket Type',
+      },
+    },
+    TenTrip: {
+      screen: TenTrip,
+      navigationOptions: {
+        title: 'Select Ticket',
+      },
+    },
+    Monthly: {
+      screen: Monthly,
+      navigationOptions: {
+        title: 'Select Ticket',
+      },
+    },
+    OneWay: {
+      screen: OneWay,
+      navigationOptions: {
+        title: 'Select Ticket',
+      },
+    },
+    RoundTrip: {
+      screen: RoundTrip,
+      navigationOptions: {
+        title: 'Select Ticket',
+      },
+    },
+    Weekly: {
+      screen: Weekly,
+      navigationOptions: {
+        title: 'Select Ticket',
       },
     }
   },
