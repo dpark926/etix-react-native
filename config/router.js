@@ -15,6 +15,8 @@ import Weekly from '../components/ticketTypes/Weekly';
 import Accept from '../components/Accept';
 import PaymentMethod from '../components/PaymentMethod';
 import CardInfo from '../components/CardInfo';
+import Wallet from '../components/Wallet';
+import Access from '../components/Access';
 // cssVariables
 import cssVariables from '../styles/cssVariables';
 
@@ -93,6 +95,19 @@ export const RootStack = StackNavigator(
       navigationOptions: {
         title: 'Select Payment Method',
       },
+    },
+    Wallet: {
+      screen: Wallet,
+      navigationOptions: {
+        title: 'Ticket Wallet',
+      },
+    },
+    Access: {
+      screen: Access,
+      navigationOptions: {
+        title: 'Ticket',
+      },
+
     }
   },
   {
