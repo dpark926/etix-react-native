@@ -12,6 +12,7 @@ import Monthly from '../components/ticketTypes/Monthly';
 import OneWay from '../components/ticketTypes/OneWay';
 import RoundTrip from '../components/ticketTypes/RoundTrip';
 import Weekly from '../components/ticketTypes/Weekly';
+import Accept from '../components/Accept';
 // cssVariables
 import cssVariables from '../styles/cssVariables';
 
@@ -69,6 +70,12 @@ export const RootStack = StackNavigator(
     },
     Weekly: {
       screen: Weekly,
+      navigationOptions: {
+        title: 'Select Ticket',
+      },
+    },
+    Accept: {
+      screen: Accept,
       navigationOptions: {
         title: 'Select Ticket',
       },
