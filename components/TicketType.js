@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
   stationItem: {
     marginLeft: 15,
     marginRight: 15,
-    paddingTop: 12,
-    paddingBottom: 12,
+    paddingTop: 20,
+    paddingBottom: 20,
     borderBottomColor: cssVariables.lightGray,
     borderBottomWidth: 1,
     // borderColor: 'red',
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingTop: 10,
+    paddingBottom: 5,
     paddingLeft: 15,
     paddingRight: 15,
   },

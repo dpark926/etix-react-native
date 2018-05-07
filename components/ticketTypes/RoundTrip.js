@@ -19,7 +19,7 @@ import cssVariables from '../../styles/cssVariables';
 class RoundTrip extends Component<> {
   handleTicket = (text) => {
     this.props.handleTicket(text);
-    // this.props.navigation.navigate(text);
+    this.props.navigation.navigate('Accept');
   }
 
   render() {
@@ -29,10 +29,10 @@ class RoundTrip extends Component<> {
       <View>
         <BlackBar yellowWidth={yellowWidth}/>
         <View style={styles.originTo}>
-          <Text style={styles.clicked}>{this.props.clickReducer.clickedOrigin}</Text>
-          <Text style={styles.clicked}>{this.props.clickReducer.clickedDestination}</Text>
+          <Text style={[styles.clicked, styles.clickedBold]}>{this.props.clickReducer.clickedOrigin}</Text>
+          <Text style={[styles.clicked, styles.clickedBold]}>{this.props.clickReducer.clickedDestination}</Text>
         </View>
-        <View style={styles.originTo}>
+        <View style={[styles.originTo, styles.ticketDescription]}>
           <Text style={styles.clicked}>{this.props.clickReducer.ticketType}</Text>
         </View>
         <View style={styles.tabContainer}>
@@ -92,8 +92,8 @@ const styles = StyleSheet.create({
   stationItem: {
     marginLeft: 15,
     marginRight: 15,
-    paddingTop: 12,
-    paddingBottom: 12,
+    paddingTop: 20,
+    paddingBottom: 20,
     borderBottomColor: cssVariables.lightGray,
     borderBottomWidth: 1,
     // borderColor: 'red',
@@ -109,8 +109,13 @@ const styles = StyleSheet.create({
   },
   clicked: {
     fontSize: 14,
-    fontWeight: 'bold',
     color: 'white'
+  },
+  clickedBold: {
+    fontWeight: 'bold',
+  },
+  ticketDescription: {
+    paddingBottom: 5
   },
   tabContainer: {
     backgroundColor: cssVariables.darkBlue,
