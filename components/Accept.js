@@ -60,9 +60,9 @@ class Accept extends Component<> {
               ticket={this.props.clickReducer.ticket}
             />
           </View>
-          <View style={styles.acceptButton}>
+          <TouchableHighlight onPress={() => this.props.navigation.navigate('PaymentMethod')} style={styles.acceptButton}>
             <Text style={styles.acceptButtonText}>Accept & Continue</Text>
-          </View>
+          </TouchableHighlight>
         </View>
       </View>
     )

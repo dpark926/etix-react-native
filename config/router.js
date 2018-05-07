@@ -13,6 +13,8 @@ import OneWay from '../components/ticketTypes/OneWay';
 import RoundTrip from '../components/ticketTypes/RoundTrip';
 import Weekly from '../components/ticketTypes/Weekly';
 import Accept from '../components/Accept';
+import PaymentMethod from '../components/PaymentMethod';
+import CardInfo from '../components/CardInfo';
 // cssVariables
 import cssVariables from '../styles/cssVariables';
 
@@ -78,6 +80,18 @@ export const RootStack = StackNavigator(
       screen: Accept,
       navigationOptions: {
         title: 'Select Ticket',
+      },
+    },
+    PaymentMethod: {
+      screen: PaymentMethod,
+      navigationOptions: {
+        title: 'Select Payment Method',
+      },
+    },
+    CardInfo: {
+      screen: CardInfo,
+      navigationOptions: {
+        title: 'Select Payment Method',
       },
     }
   },
