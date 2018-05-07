@@ -35,6 +35,14 @@ class Monthly extends Component<> {
         <View style={styles.originTo}>
           <Text style={styles.clicked}>{this.props.clickReducer.ticketType}</Text>
         </View>
+        <View style={styles.tabContainer}>
+          <View style={styles.tabSingle}>
+            <Text style={styles.tabSingleText}>Single</Text>
+          </View>
+          <View style={styles.tabMultiple}>
+            <Text style={styles.tabMultipleText}>Multiple</Text>
+          </View>
+        </View>
         <TouchableHighlight onPress={() => this.handleTicket('Monthly')}>
           <View style={styles.stationItem}>
             <Text>Monthly</Text>
@@ -68,6 +76,29 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     color: 'white'
+  },
+  tabContainer: {
+    backgroundColor: cssVariables.darkBlue,
+    flexDirection: 'row',
+  },
+  tabSingle: {
+    backgroundColor: cssVariables.lighterGray,
+    borderTopRightRadius: 8,
+    padding: 10,
+    marginTop: 5,
+    flex: 0.5,
+  },
+  tabSingleText: {
+    textAlign: 'center'
+  },
+  tabMultiple: {
+    padding: 10,
+    marginTop: 5,
+    flex: 0.5,
+  },
+  tabMultipleText: {
+    color: 'white',
+    textAlign: 'center'
   }
 });
 
