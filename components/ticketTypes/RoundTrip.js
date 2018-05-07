@@ -45,42 +45,42 @@ class RoundTrip extends Component<> {
         </View>
         <TouchableHighlight onPress={() => this.handleTicket('Peak')}>
           <View style={styles.stationItem}>
-            <Text>Peak</Text>
+            <Text style={styles.stationText}>Peak</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicket('Off Peak')}>
           <View style={styles.stationItem}>
-            <Text>Off Peak</Text>
+            <Text style={styles.stationText}>Off Peak</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicket('Senior')}>
           <View style={styles.stationItem}>
-            <Text>Senior / Disabled / Medicare</Text>
+            <Text style={styles.stationText}>Senior / Disabled / Medicare</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicket('Family')}>
           <View style={styles.stationItem}>
-            <Text>Family</Text>
+            <Text style={styles.stationText}>Family</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicket('Military')}>
           <View style={styles.stationItem}>
-            <Text>Military</Text>
+            <Text style={styles.stationText}>Military</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicket('Disabled')}>
           <View style={styles.stationItem}>
-            <Text>Disabled</Text>
+            <Text style={styles.stationText}>Disabled</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicket('Child Peak')}>
           <View style={styles.stationItem}>
-            <Text>Child Peak</Text>
+            <Text style={styles.stationText}>Child Peak</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicket('Child Off Peak')}>
           <View style={styles.stationItem}>
-            <Text>Child Off Peak</Text>
+            <Text style={styles.stationText}>Child Off Peak</Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -98,6 +98,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     // borderColor: 'red',
     // borderWidth: 2
+  },
+  stationText: {
+    fontSize: 16
   },
   originTo: {
     backgroundColor: cssVariables.darkerBlue,

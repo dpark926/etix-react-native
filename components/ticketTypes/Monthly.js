@@ -45,7 +45,7 @@ class Monthly extends Component<> {
         </View>
         <TouchableHighlight onPress={() => this.handleTicket('Monthly')}>
           <View style={styles.stationItem}>
-            <Text>Monthly</Text>
+            <Text style={styles.stationText}>Monthly</Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -63,6 +63,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     // borderColor: 'red',
     // borderWidth: 2
+  },
+  stationText: {
+    fontSize: 16
   },
   originTo: {
     backgroundColor: cssVariables.darkerBlue,

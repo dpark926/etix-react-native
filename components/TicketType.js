@@ -34,22 +34,22 @@ class TicketType extends Component<> {
         </View>
         <TouchableHighlight onPress={() => this.handleTicketType('Ten Trip')}>
           <View style={styles.stationItem}>
-            <Text>Ten Trip</Text>
+            <Text style={styles.stationText}>Ten Trip</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicketType('Monthly')}>
           <View style={styles.stationItem}>
-            <Text>Monthly</Text>
+            <Text style={styles.stationText}>Monthly</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicketType('One Way')}>
           <View style={styles.stationItem}>
-            <Text>One Way</Text>
+            <Text style={styles.stationText}>One Way</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicketType('Round Trip')}>
           <View style={styles.stationItem}>
-            <Text>Round Trip</Text>
+            <Text style={styles.stationText}>Round Trip</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicketType('Weekly')}>

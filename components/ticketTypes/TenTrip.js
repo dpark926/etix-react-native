@@ -45,17 +45,17 @@ class TenTrip extends Component<> {
         </View>
         <TouchableHighlight onPress={() => this.handleTicket('Peak')}>
           <View style={styles.stationItem}>
-            <Text>Peak</Text>
+            <Text style={styles.stationText}>Peak</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicket('Off Peak')}>
           <View style={styles.stationItem}>
-            <Text>Off Peak</Text>
+            <Text style={styles.stationText}>Off Peak</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.handleTicket('Senior')}>
           <View style={styles.stationItem}>
-            <Text>Senior / Disabled / Medicare</Text>
+            <Text style={styles.stationText}>Senior / Disabled / Medicare</Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -73,6 +73,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     // borderColor: 'red',
     // borderWidth: 2
+  },
+  stationText: {
+    fontSize: 16
   },
   originTo: {
     backgroundColor: cssVariables.darkerBlue,
