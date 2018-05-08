@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   TouchableHighlight,
   ScrollView
 } from 'react-native';
@@ -35,16 +36,19 @@ class PaymentMethod extends Component<> {
         <Text style={styles.paymentMethod}>Payment methods</Text>
         <TouchableHighlight onPress={() => this.props.navigation.navigate('CardInfo')}>
           <View style={styles.stationItem}>
+            <Image style={styles.paymentIcon} source={require('../styles/imgs/amex_logo.jpeg')} />
             <Text style={styles.stationText}>American Express</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.props.navigation.navigate('CardInfo')}>
           <View style={styles.stationItem}>
+            <Image style={styles.paymentIcon} source={require('../styles/imgs/plus_add_icon.png')} />
             <Text style={styles.stationText}>Pay with New Card</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.props.navigation.navigate('CardInfo')}>
           <View style={styles.stationItem}>
+            <Image style={styles.paymentIcon} source={require('../styles/imgs/masterpass_icon.png')} />
             <Text style={styles.stationText}>Pay with MasterPass</Text>
           </View>
         </TouchableHighlight>
@@ -63,7 +67,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
   },
   clicked: {
-    fontSize: 14,
+    fontSize: 15,
     color: 'white',
     paddingRight: 5
   },
@@ -71,16 +75,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   ticketDescription: {
-    paddingBottom: 5
+    paddingBottom: 10
   },
   costWrapper: {
     backgroundColor: cssVariables.darkBlue,
     flexDirection: 'row',
-    padding: 10
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingRight: 15,
+    paddingLeft: 15,
   },
   costTotal: {
     color: 'white',
-    fontSize: 17,
+    fontSize: 19,
     fontWeight: 'bold',
     flex: 0.5,
   },
@@ -92,31 +99,42 @@ const styles = StyleSheet.create({
     textAlign: 'right'
   },
   splitPayments: {
+    backgroundColor: 'white',
     padding: 15,
-    fontSize: 17,
-    textAlign: 'right'
+    fontSize: 16,
+    fontWeight: '700',
+    textAlign: 'right',
   },
   paymentMethod: {
-    backgroundColor: cssVariables.lightGray,
-    paddingTop: 10,
-    paddingBottom: 10,
+    backgroundColor: cssVariables.lighterGray,
+    paddingTop: 8,
+    paddingBottom: 8,
     paddingLeft: 15,
     paddingRight: 15,
-    fontSize: 17
+    fontSize: 16,
+    fontWeight: '600'
   },
   stationItem: {
-    marginLeft: 15,
-    marginRight: 15,
-    paddingTop: 20,
-    paddingBottom: 20,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 28,
+    paddingBottom: 28,
     borderBottomColor: cssVariables.lightGray,
     borderBottomWidth: 1,
-    // borderColor: 'red',
-    // borderWidth: 2
+    backgroundColor: 'white',
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   stationText: {
-    fontSize: 16
+    fontSize: 16,
+    fontWeight: '600'
   },
+  paymentIcon: {
+    width: 45,
+    height: 30,
+    marginRight: 10
+    // flexGrow: 1,
+  }
 })
 
 const mapStateToProps = state => {
