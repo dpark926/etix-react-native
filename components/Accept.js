@@ -74,12 +74,12 @@ const styles = StyleSheet.create({
     backgroundColor: cssVariables.darkerBlue,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: 10,
+    paddingTop: 12,
     paddingLeft: 15,
     paddingRight: 15,
   },
   clicked: {
-    fontSize: 14,
+    fontSize: 15,
     color: 'white',
     paddingRight: 5
   },
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   ticketDescription: {
-    paddingBottom: 5
+    paddingBottom: 10
   },
   tabContainer: {
     backgroundColor: cssVariables.darkBlue,
@@ -118,30 +118,31 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     paddingLeft: 10,
     paddingRight: 10,
-    marginTop: 65,
-    // alignSelf: 'flex-end',
+    marginTop: 60,
   },
   acceptHeader: {
-    paddingTop: 5,
+    paddingBottom: 5,
     // paddingBottom: 20,
     // marginBottom: 10
   },
   acceptHeaderText: {
     color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold'
+    fontSize: 17,
+    fontWeight: '500'
   },
   disclaimer: {
-    height: 270,
+    height: 250,
     // overflow: 'auto'
   },
   disclaimerTicketTypes: {
     flexDirection: 'row',
-    marginBottom: 10
+    marginBottom: 10,
   },
   disclaimerTicketTypesText: {
     color: 'white',
-    paddingRight: 5
+    paddingRight: 5,
+    fontSize: 15,
+    fontWeight: 'bold'
   },
   acceptButton: {
     marginTop: 20,
@@ -157,6 +158,7 @@ const styles = StyleSheet.create({
   acceptButtonText: {
     textAlign: 'center',
     fontSize: 18,
+    fontWeight: '600',
     color: cssVariables.darkerBlue,
   }
 });

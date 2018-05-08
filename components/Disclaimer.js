@@ -49,6 +49,7 @@ class Disclaimer extends Component<> {
 const styles = StyleSheet.create({
   disclaimerList: {
     color: 'white',
+    lineHeight: 19,
     marginBottom: 5
   }
 })

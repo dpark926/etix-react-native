@@ -45,67 +45,70 @@ export const RootStack = StackNavigator(
     TicketType: {
       screen: TicketType,
       navigationOptions: {
-        title: 'Select Ticket Type',
+        header: <Header title='Select Ticket Type'/>
       },
     },
     TenTrip: {
       screen: TenTrip,
       navigationOptions: {
-        title: 'Select Ticket',
+        header: <Header title='Select Ticket'/>
       },
     },
     Monthly: {
       screen: Monthly,
       navigationOptions: {
-        title: 'Select Ticket',
+        header: <Header title='Select Ticket'/>
       },
     },
     OneWay: {
       screen: OneWay,
       navigationOptions: {
-        title: 'Select Ticket',
+        header: <Header title='Select Ticket'/>
       },
     },
     RoundTrip: {
       screen: RoundTrip,
       navigationOptions: {
-        title: 'Select Ticket',
+        header: <Header title='Select Ticket'/>
       },
     },
     Weekly: {
       screen: Weekly,
       navigationOptions: {
-        title: 'Select Ticket',
+        header: <Header title='Select Ticket'/>
       },
     },
     Accept: {
       screen: Accept,
       navigationOptions: {
-        title: 'Select Ticket',
+        header: <Header title='Select Ticket'/>
       },
     },
     PaymentMethod: {
       screen: PaymentMethod,
       navigationOptions: {
-        title: 'Select Payment Method',
+        header: <Header title='Select Payment Method'/>
       },
     },
     CardInfo: {
       screen: CardInfo,
       navigationOptions: {
         title: 'Select Payment Method',
+        header: <Header title='Select Payment Method'/>
       },
     },
     Wallet: {
       screen: Wallet,
       navigationOptions: {
         title: 'Ticket Wallet',
+        header: <Header title='Ticket Wallet'/>
       },
     },
     Access: {
       screen: Access,
       navigationOptions: {
         title: 'Ticket',
+        header: <Header title='Ticket'/>
       },
 
     }

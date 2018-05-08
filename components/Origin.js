@@ -97,8 +97,6 @@ const styles = StyleSheet.create({
     borderBottomColor: '#e5e5e5',
     borderBottomWidth: 1,
     backgroundColor: 'white'
-    // borderColor: 'red',
-    // borderWidth: 2
   },
   nycStation: {
 

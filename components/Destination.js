@@ -111,8 +111,6 @@ const styles = StyleSheet.create({
     borderBottomColor: '#e5e5e5',
     borderBottomWidth: 1,
     backgroundColor: 'white'
-    // borderColor: 'red',
-    // borderWidth: 2
   },
   nycStation: {
 
@@ -149,7 +147,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
   },
   clicked: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 'bold',
     color: 'white'
   }
