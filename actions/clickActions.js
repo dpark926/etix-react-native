@@ -26,10 +26,8 @@ function handleTicketType(data) {
 }
 
 function handleTicket(data) {
-  // debugger
   let id = data.split(", ")
-  console.log(id)
-  console.log('yo')
+
   return {
     type: 'ticket',
     payload: {

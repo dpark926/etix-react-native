@@ -26,7 +26,7 @@ class Monthly extends Component<> {
     const yellowWidth = 0.5;
 
     return (
-      <View>
+      <View style={styles.ticketContainer}>
         <BlackBar yellowWidth={yellowWidth}/>
         <View style={styles.originTo}>
           <Text style={[styles.clicked, styles.clickedBold]}>{this.props.clickReducer.clickedOrigin}</Text>
@@ -54,6 +54,10 @@ class Monthly extends Component<> {
 }
 
 const styles = StyleSheet.create({
+  ticketContainer: {
+    height: '100%',
+    backgroundColor: 'white'
+  },
   stationItem: {
     marginLeft: 15,
     marginRight: 15,
@@ -61,8 +65,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     borderBottomColor: cssVariables.lightGray,
     borderBottomWidth: 1,
-    // borderColor: 'red',
-    // borderWidth: 2
+    backgroundColor: 'white',
   },
   stationText: {
     fontSize: 16
@@ -71,33 +74,34 @@ const styles = StyleSheet.create({
     backgroundColor: cssVariables.darkerBlue,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: 10,
+    paddingTop: 12,
     paddingLeft: 15,
     paddingRight: 15,
   },
   clicked: {
-    fontSize: 14,
+    fontSize: 15,
     color: 'white'
   },
   clickedBold: {
     fontWeight: 'bold',
   },
   ticketDescription: {
-    paddingBottom: 5
+    paddingBottom: 10
   },
   tabContainer: {
     backgroundColor: cssVariables.darkBlue,
     flexDirection: 'row',
   },
   tabSingle: {
-    backgroundColor: cssVariables.lighterGray,
+    backgroundColor: 'white',
     borderTopRightRadius: 8,
     padding: 10,
     marginTop: 5,
     flex: 0.5,
   },
   tabSingleText: {
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 15
   },
   tabMultiple: {
     padding: 10,
@@ -106,7 +110,8 @@ const styles = StyleSheet.create({
   },
   tabMultipleText: {
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 15
   }
 });
 
@@ -115,7 +120,7 @@ const mapStateToProps = state => {
 };
 
 const mapActionsToProps = {
-  handleTicket: handleClick.handleTicketType
+  handleTicket: handleClick.handleTicket
 }
 
 export default connect( mapStateToProps, mapActionsToProps )( Monthly );
