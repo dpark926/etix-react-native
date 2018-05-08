@@ -104,12 +104,13 @@ class Destination extends Component<> {
 
 const styles = StyleSheet.create({
   stationItem: {
-    marginLeft: 15,
-    marginRight: 15,
-    paddingTop: 12,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 13,
     paddingBottom: 12,
-    borderBottomColor: cssVariables.lightGray,
+    borderBottomColor: '#e5e5e5',
     borderBottomWidth: 1,
+    backgroundColor: 'white'
     // borderColor: 'red',
     // borderWidth: 2
   },
@@ -117,17 +118,18 @@ const styles = StyleSheet.create({
 
   },
   blueDivider: {
-    backgroundColor: cssVariables.darkerBlue,
+    backgroundColor: '#223365',
     marginLeft: 0,
     marginRight: 0,
-    borderBottomWidth: 0
+    borderBottomWidth: 0,
+    height: 30
   },
   locationTitle: {
-    backgroundColor: cssVariables.lightGray,
+    backgroundColor: cssVariables.lighterGray,
     marginLeft: 0,
     marginRight: 0,
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingTop: 4,
+    paddingBottom: 4,
     paddingLeft: 15,
     paddingRight: 15,
     borderBottomWidth: 0
@@ -136,7 +138,7 @@ const styles = StyleSheet.create({
 
   },
   stationText: {
-    fontSize: 16
+    fontSize: 15
   },
   originTo: {
     backgroundColor: cssVariables.darkerBlue,

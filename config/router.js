@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation';
 // Components
 import BuyTickets from '../components/BuyTickets';
 import HomeHeader from '../components/HomeHeader';
+import Header from '../components/Header';
 // import Header from '../components/Header';
 import Origin from '../components/Origin';
 import Destination from '../components/Destination';
@@ -32,14 +33,13 @@ export const RootStack = StackNavigator(
     Origin: {
       screen: Origin,
       navigationOptions: {
-        title: 'Select Origin Station',
-        // header: <Header/>
+        header: <Header title='Select Origin Station'/>
       },
     },
     Destination: {
       screen: Destination,
       navigationOptions: {
-        title: 'Select Destination Station',
+        header: <Header title='Select Destination Station'/>
       },
     },
     TicketType: {

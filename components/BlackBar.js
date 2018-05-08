@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   blackBar: {
     flexDirection: 'row',
     backgroundColor: '#011f4b',
-    height: 6
+    height: 7
   },
   // yellowProgress: {
   //   backgroundColor: 'orange',

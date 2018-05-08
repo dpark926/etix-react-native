@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 
   },
   search: {
-    height: 35,
+    height: 37,
     margin: 10,
     padding: 10,
     backgroundColor: cssVariables.darkBlue,

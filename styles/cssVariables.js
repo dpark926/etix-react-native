@@ -4,7 +4,7 @@ const cssVariables = {
   blue: '#9099b2',
   gray: '#adacac',
   lightGray: '#d6d6d6',
-  lighterGray: '#f8f6f6',
+  lighterGray: '#F5F2F9',
 }
 
 export default cssVariables;
