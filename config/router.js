@@ -32,85 +32,84 @@ export const RootStack = StackNavigator(
     },
     Origin: {
       screen: Origin,
-      navigationOptions: {
-        header: <Header title='Select Origin Station'/>
-      },
+      // navigationOptions: {
+      //   header: <Header title='Select Origin Station' navigation={navigation}/>
+      // },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Origin Station' navigation={navigation} backButton='Home'/>
+      }),
     },
     Destination: {
       screen: Destination,
-      navigationOptions: {
-        header: <Header title='Select Destination Station'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Destination Station' navigation={navigation} backButton='Origin'/>
+      }),
     },
     TicketType: {
       screen: TicketType,
-      navigationOptions: {
-        header: <Header title='Select Ticket Type'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Ticket Type' navigation={navigation} backButton='Destination'/>
+      }),
     },
     TenTrip: {
       screen: TenTrip,
-      navigationOptions: {
-        header: <Header title='Select Ticket'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Ticket' navigation={navigation} backButton='TicketType'/>
+      }),
     },
     Monthly: {
       screen: Monthly,
-      navigationOptions: {
-        header: <Header title='Select Ticket'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Ticket' navigation={navigation} backButton='TicketType'/>
+      }),
     },
     OneWay: {
       screen: OneWay,
-      navigationOptions: {
-        header: <Header title='Select Ticket'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Ticket' navigation={navigation} backButton='TicketType'/>
+      }),
     },
     RoundTrip: {
       screen: RoundTrip,
-      navigationOptions: {
-        header: <Header title='Select Ticket'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Ticket' navigation={navigation} backButton='TicketType'/>
+      }),
     },
     Weekly: {
       screen: Weekly,
-      navigationOptions: {
-        header: <Header title='Select Ticket'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Ticket' navigation={navigation} backButton='TicketType'/>
+      }),
     },
     Accept: {
       screen: Accept,
-      navigationOptions: {
-        header: <Header title='Select Ticket'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Ticket' navigation={navigation} backButton='TicketType'/>
+      }),
     },
     PaymentMethod: {
       screen: PaymentMethod,
-      navigationOptions: {
-        header: <Header title='Select Payment Method'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Payment Method' navigation={navigation} backButton='Accept'/>
+      }),
     },
     CardInfo: {
       screen: CardInfo,
-      navigationOptions: {
-        title: 'Select Payment Method',
-        header: <Header title='Select Payment Method'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Select Payment Method' navigation={navigation} backButton='PaymentMethod'/>
+      }),
     },
     Wallet: {
       screen: Wallet,
-      navigationOptions: {
-        title: 'Ticket Wallet',
-        header: <Header title='Ticket Wallet'/>
-      },
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Ticket Wallet' navigation={navigation} backButton='CardInfo'/>
+      }),
     },
     Access: {
       screen: Access,
-      navigationOptions: {
-        title: 'Ticket',
-        header: <Header title='Ticket'/>
-      },
-
+      navigationOptions: ({ navigation }) => ({
+        header: <Header title='Ticket' navigation={navigation} backButton='Wallet'/>
+      }),
     }
   },
   {

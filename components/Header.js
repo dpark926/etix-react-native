@@ -3,6 +3,7 @@ import {
   Text,
   View,
   StyleSheet,
+  TouchableHighlight,
 } from 'react-native';
 import cssVariables from '../styles/cssVariables';
 
@@ -10,7 +11,9 @@ function Header(props) {
   console.log(props)
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.backButton}>{'<'}</Text>
+      <TouchableHighlight onPress={() => props.navigation.navigate(props.backButton)}>
+        <Text style={styles.backButton}>{'<'}</Text>
+      </TouchableHighlight>
       <Text style={styles.headerTitle}>{props.title}</Text>
       <Text style={[styles.backButton, styles.empty]}></Text>
     </View>

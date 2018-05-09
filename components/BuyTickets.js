@@ -24,7 +24,7 @@ class BuyTickets extends Component<> {
                 <Image style={styles.buttonArrow} source={require('../styles/imgs/right-arrow.png')} />
               </View>
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.props.navigation.navigate('Origin')}>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('Wallet')}>
               <View style={styles.button}>
                 <Image style={styles.buttonImg} source={require('../styles/imgs/wallet.png')} />
                 <Text style={styles.buttonText}>
