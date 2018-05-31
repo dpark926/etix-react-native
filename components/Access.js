@@ -9,6 +9,7 @@ import {
   Easing
 } from 'react-native';
 import { connect } from 'react-redux';
+import { ColorPicker } from 'react-native-color-picker';
 // Components
 import BlackBar from './BlackBar';
 // cssVariables
@@ -34,6 +35,9 @@ class Access extends Component<> {
 
     this.state = {
       activated: (new Date()).toLocaleTimeString(),
+      colorToggle1: false,
+      colorToggle2: false,
+      colorToggle3: false,
       blockColor1: divStyle[0],
       blockColor2: divStyle[1],
       blockColor3: divStyle[2],
@@ -97,6 +101,18 @@ class Access extends Component<> {
         easing: Easing.linear
       }
     ).start(() => this.animate())
+  }
+
+  toggle1 = () => {
+    this.setState({colorToggle1: !this.state.colorToggle1})
+  }
+
+  toggle2 = () => {
+    this.setState({colorToggle2: !this.state.colorToggle2})
+  }
+
+  toggle3 = () => {
+    this.setState({colorToggle3: !this.state.colorToggle3})
   }
 
   render() {
@@ -194,9 +210,15 @@ class Access extends Component<> {
               // height: 100,
               // position: 'absolute'
             }}>
-              <View style={[styles.block, styles.blockOne, {backgroundColor: this.state.blockColor1}]}></View>
-              <View style={[styles.block, styles.blockTwo, {backgroundColor: this.state.blockColor2}]}></View>
-              <View style={[styles.block, styles.blockThree, {backgroundColor: this.state.blockColor3}]}></View>
+              <TouchableHighlight style={[styles.block, styles.blockOne, {backgroundColor: this.state.blockColor1}]} onPress={this.toggle1}>
+                <View></View>
+              </TouchableHighlight>
+              <TouchableHighlight style={[styles.block, styles.blockTwo, {backgroundColor: this.state.blockColor2}]} onPress={this.toggle2}>
+                <View></View>
+              </TouchableHighlight>
+              <TouchableHighlight style={[styles.block, styles.blockThree, {backgroundColor: this.state.blockColor3}]} onPress={this.toggle3}>
+                <View></View>
+              </TouchableHighlight>
             </Animated.View>
             <Animated.View style={{marginLeft: movingMargin, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
               <Text
@@ -240,6 +262,18 @@ class Access extends Component<> {
           </View>
         </View>
         <View style={styles.ticketInfoWrapper}>
+          {this.state.colorToggle1 && <ColorPicker
+            onColorSelected={color => this.setState({blockColor1: color})}
+            style={{flex: 1, height: 300}}
+          />}
+          {this.state.colorToggle2 && <ColorPicker
+            onColorSelected={color => this.setState({blockColor2: color})}
+            style={{flex: 1, height: 300}}
+          />}
+          {this.state.colorToggle3 && <ColorPicker
+            onColorSelected={color => this.setState({blockColor3: color})}
+            style={{flex: 1, height: 300}}
+          />}
           <View style={styles.ticketActivated}>
             <Text style={styles.ticketActivatedText}>Ticket activated at {this.state.activated.slice(0, 4)} {this.state.activated.slice(-2)}</Text>
           </View>
