@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
-    flex: 1
+    flex: 1,
+    paddingTop: 10
   },
   headerTitle: {
     color: 'white',
